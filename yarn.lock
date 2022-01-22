@@ -1345,36 +1345,37 @@
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@react-three/fiber@7.0.6":
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-7.0.6.tgz#faa5aa5d496ae778a89fe2d3f503428a0e3c841b"
-  integrity sha512-GSMmnk66B/xGGfbSj5lGiZCxGQD0i8rm0Bt/Xp6TD2b9cYe2Lxb2wegU04zIeN89aoUYMHXhL1GNXsZvvOjfUA==
+"@react-three/fiber@^7.0.25":
+  version "7.0.25"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-7.0.25.tgz#a8f6b57d29f2ac42ed7354e1fc0375f83d2e8cd8"
+  integrity sha512-d4XudHlfSYhiMnA8E6HWK5UPr99SdQrg/wTNs2y/sjyqUMAa89WP62rsGUohGTN38qIk/c1DgaG/zSQKXEC6XA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     react-merge-refs "^1.1.0"
     react-reconciler "^0.26.2"
     react-three-fiber "0.0.0-deprecated"
-    react-use-measure "^2.0.4"
+    react-use-measure "^2.1.1"
     resize-observer-polyfill "^1.5.1"
     scheduler "^0.20.2"
     use-asset "^1.0.4"
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@react-three/flex@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@react-three/flex/-/flex-0.6.0.tgz#5466f52093a21b762792772643b321ccd99afa6f"
-  integrity sha512-905uzXK19vzpzWY+r4kZM9rp7yYHhKyx2AtTN9e3vdF6/MwWQ/tBmQuS83dy52rN7DheC35XXrunA7p/9XyKCw==
+"@react-three/flex@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@react-three/flex/-/flex-0.7.0.tgz#552f74a6765aa1d2d2e64cddf30bb2d22c2298ef"
+  integrity sha512-Cim/9u6BYuieyZ2NXbE4nbNOqWIyOlT62qlFEQsh6SoMJFde0pBICZupgRlI5VkWX6c2aMXoFkLTxlX6AEmsjQ==
   dependencies:
     yoga-layout-prebuilt "^1.9.6"
 
-"@react-three/postprocessing@2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@react-three/postprocessing/-/postprocessing-2.0.5.tgz#9c30e14e0766f9ceee33740682a9fcdd2cfe785a"
-  integrity sha512-0o4NjYXpqfbW03fpB2WuWA2FApoafwvqhDI2Ca1Weljbo3d/Uy3XUBB8WyZU3zWIAQbg7SzU/d03wpFSGzWzJQ==
+"@react-three/postprocessing@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@react-three/postprocessing/-/postprocessing-2.1.2.tgz#c8979cb1892b72696605cb241ec95fd706b3c450"
+  integrity sha512-VU0lh0wMXI77cYN/JeV/D7nK8Bztv+pFAilZnr2TnK82/lL5CeDmjHkvfVquCM/2uMh6d58vx5IK8WZTmlR1vQ==
   dependencies:
-    postprocessing "^6.22.2"
+    postprocessing "^6.23.3"
     react-merge-refs "^1.1.0"
+    three-stdlib "^2.6.2"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.0"
@@ -6785,7 +6786,7 @@ postcss@^8.2.15, postcss@^8.3.5, postcss@^8.4.4:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
-postprocessing@^6.22.2:
+postprocessing@^6.23.3:
   version "6.23.5"
   resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.23.5.tgz#b4e68d9f5be7dfa2fa886ce8a4d99d7eab56317a"
   integrity sha512-WpzKg6nUbRWVOISCfup/1rzJjYtxj8kCow/YOkzYq+/879mISewWZAUXwfXaRO8Mu3yM6dH+WAWzxWROjrxM7A==
@@ -7073,7 +7074,7 @@ react-three-fiber@0.0.0-deprecated:
   resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-0.0.0-deprecated.tgz#c737242487d824cf9520307308b7e4c4071a278f"
   integrity sha512-EblIqTAsIpkYeM8bZtC4lcpTE0A2zCEGipFB52RgcQq/q+0oryrk7Sxt+sqhIjUu6xMNEVywV8dr74lz5yWO6A==
 
-react-use-measure@^2.0.4:
+react-use-measure@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.1.1.tgz#5824537f4ee01c9469c45d5f7a8446177c6cc4ba"
   integrity sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig==
@@ -7985,7 +7986,7 @@ three-mesh-bvh@^0.4.1:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.4.3.tgz#da5ac7db2e61aa0aa66dc0070a6085bcfbd1281c"
   integrity sha512-4CO1dU73hQRwGgeOL05CnsKkIa0LgNCH6S8t66D9nvSiyK9wDzrSqzGVd8e+eUytFoliYHc/lwoW0uamrmXo5w==
 
-three-stdlib@^2.3.1:
+three-stdlib@^2.3.1, three-stdlib@^2.6.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.7.2.tgz#801a530e93f82dfdd8e2b0856cd4ef5fd73e9247"
   integrity sha512-6jtdJVZOcA+6xE+/YnuOZ8eCuhQhDi4eZ6XKFGYiUDEVTrAFTehScqhWxdchaPGNEEAqSCuXGwSd14m397xr7w==
