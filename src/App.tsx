@@ -1,14 +1,41 @@
 import * as THREE from 'three'
-import { Suspense, useEffect, useRef, useState, useCallback } from 'react'
+import React, {
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import { useAspect, Html, TorusKnot, Plane } from '@react-three/drei'
+import { useAspect, Html, TorusKnot, Plane, Text } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex, Box } from '@react-three/flex'
-import { Text } from './Text'
+import { Flex, Box, useReflow } from '@react-three/flex'
 
 const state = {
   top: 0,
 }
+
+const CustomText = React.forwardRef(
+  (props: React.ComponentProps<typeof Text>, ref) => {
+    const defaultFont = `https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff`
+    const reflow = useReflow()
+
+    return (
+      <Text
+        ref={ref}
+        anchorX={props.anchorX || 'left'}
+        anchorY={props.anchorY || 'top'}
+        textAlign={props.textAlign || 'left'}
+        font={props.font || defaultFont}
+        // Trigger a reflow after the font loads
+        onSync={reflow}
+        {...props}
+      >
+        {props.children}
+      </Text>
+    )
+  }
+)
 
 function Title() {
   return (
@@ -20,22 +47,19 @@ function Title() {
       height='100%'
     >
       <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
+        <CustomText fontSize={0.5} letterSpacing={0.1} textAlign='center'>
           REACT
-          <meshStandardMaterial />
-        </Text>
+        </CustomText>
       </Box>
       <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
+        <CustomText fontSize={0.5} letterSpacing={0.1} textAlign='center'>
           THREE
-          <meshStandardMaterial />
-        </Text>
+        </CustomText>
       </Box>
       <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
+        <CustomText fontSize={0.5} letterSpacing={0.1} textAlign='center'>
           FIBER
-          <meshStandardMaterial />
-        </Text>
+        </CustomText>
       </Box>
     </Box>
   )
@@ -118,10 +142,9 @@ function Page({ onChangePages }: any) {
               <RotatingObj />
             </Box>
             <Box marginLeft={0.3}>
-              <Text fontSize={0.4} maxWidth={1} textAlign='center'>
+              <CustomText fontSize={0.4} maxWidth={1} textAlign='center'>
                 Flexing some Layout
-                <meshStandardMaterial />
-              </Text>
+              </CustomText>
             </Box>
           </Box>
           <Box
@@ -134,10 +157,9 @@ function Page({ onChangePages }: any) {
             marginBottom={0.5}
           >
             <Box marginLeft={0.3}>
-              <Text fontSize={0.4} maxWidth={vpWidth} textAlign='center'>
+              <CustomText fontSize={0.4} maxWidth={vpWidth} textAlign='center'>
                 with REACT THREE FLEX
-                <meshStandardMaterial />
-              </Text>
+              </CustomText>
             </Box>
           </Box>
         </group>
@@ -158,10 +180,13 @@ function Page({ onChangePages }: any) {
             </mesh>
             <Box flexDirection='column' padding={0.1}>
               <Box marginBottom={0.1} marginLeft={0.05}>
-                <Text fontSize={0.2} letterSpacing={0.1} textAlign='center'>
+                <CustomText
+                  fontSize={0.2}
+                  letterSpacing={0.1}
+                  textAlign='center'
+                >
                   OUR PRODUCTS
-                  <meshStandardMaterial />
-                </Text>
+                </CustomText>
               </Box>
               <Box flexDirection='row' flexWrap='wrap' width={2} flexGrow={1}>
                 {new Array(8).fill(0).map((k, i) => (
@@ -185,10 +210,13 @@ function Page({ onChangePages }: any) {
             </mesh>
             <Box flexDirection='column' padding={0.1}>
               <Box marginBottom={0.1} marginLeft={0.05}>
-                <Text fontSize={0.2} letterSpacing={0.1} textAlign='center'>
+                <CustomText
+                  fontSize={0.2}
+                  letterSpacing={0.1}
+                  textAlign='center'
+                >
                   OUR SERVICES
-                  <meshStandardMaterial />
-                </Text>
+                </CustomText>
               </Box>
               <Box flexDirection='row' flexWrap='wrap' width={2} flexGrow={1}>
                 {new Array(8).fill(0).map((k, i) => (
@@ -214,26 +242,24 @@ function Page({ onChangePages }: any) {
             marginBottom={1}
           >
             <Box margin={0.1}>
-              <Text
+              <CustomText
                 fontSize={0.2}
                 letterSpacing={0.1}
                 maxWidth={vpWidth * 0.8}
                 textAlign='center'
               >
                 ORDER WITH CONFIDENCE
-                <meshStandardMaterial />
-              </Text>
+              </CustomText>
             </Box>
             <Box margin={0.1}>
-              <Text
+              <CustomText
                 fontSize={0.2}
                 letterSpacing={0.1}
                 maxWidth={vpWidth * 0.8}
                 textAlign='center'
               >
                 ONE DAY DELIVERY
-                <meshStandardMaterial />
-              </Text>
+              </CustomText>
             </Box>
           </Box>
         </group>
