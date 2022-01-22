@@ -37,7 +37,7 @@ const CustomText = React.forwardRef<Text, React.ComponentProps<typeof Text>>(
   }
 )
 
-function Title() {
+const Title = () => {
   return (
     <Box
       flexDirection='column'
@@ -65,7 +65,7 @@ function Title() {
   )
 }
 
-function BackGrid() {
+const BackGrid = () => {
   const { scene } = useThree()
   useEffect(() => {
     scene.fog = new THREE.FogExp2(0, 0.05)
@@ -82,7 +82,7 @@ function BackGrid() {
   )
 }
 
-function RotatingObj() {
+const RotatingObj = () => {
   const ref = useRef<THREE.Mesh>(null!)
   useFrame(
     ({ clock }) =>
@@ -100,7 +100,7 @@ function RotatingObj() {
   )
 }
 
-function Page({ onChangePages }: any) {
+const Page = ({ onChangePages }: any) => {
   const group = useRef<THREE.Group>(null!)
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
@@ -288,7 +288,7 @@ function Page({ onChangePages }: any) {
   )
 }
 
-export default function App() {
+const App = () => {
   const scrollArea = useRef(null!)
   // useEffect(() => void onScroll({ target: scrollArea.current }), [])
   const [pages, setPages] = useState(0)
@@ -332,3 +332,5 @@ export default function App() {
     </>
   )
 }
+
+export default App
