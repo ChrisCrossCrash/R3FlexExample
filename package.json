@@ -13,17 +13,29 @@
     "@types/three": "0.130.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-scripts": "^5.0.0",
     "three": "0.130.1",
     "troika-three-text": "0.42.0"
   },
   "devDependencies": {
+    "@types/react-dom": "^17.0.11",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
     "typescript": "3.8.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write ."
   },
   "browserslist": [
     ">0.2%",

@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "ecmel.vscode-html-css",
+    "eamodio.gitlens",
+    "analytic-signal.preview-mp4",
+    "josefbiehler.cypress-fixture-intellisense",
+    "tnrich.vscode-extension-open-cypress",
+    "cesium.gltf-vscode"
+  ]
+}
