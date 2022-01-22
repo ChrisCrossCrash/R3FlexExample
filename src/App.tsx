@@ -15,8 +15,8 @@ const state = {
   top: 0,
 }
 
-const CustomText = React.forwardRef(
-  (props: React.ComponentProps<typeof Text>, ref) => {
+const CustomText = React.forwardRef<Text, React.ComponentProps<typeof Text>>(
+  (props, ref) => {
     const defaultFont = `https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff`
     const reflow = useReflow()
 
