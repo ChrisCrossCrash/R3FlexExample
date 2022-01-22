@@ -1,25 +1,13 @@
 import * as THREE from 'three'
-import React, {
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-} from 'react'
+import { Suspense, useEffect, useRef, useState, useCallback } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useAspect, Html, TorusKnot, Plane } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex, Box, useReflow } from '@react-three/flex'
+import { Flex, Box } from '@react-three/flex'
 import { Text } from './Text'
 
 const state = {
   top: 0,
-}
-
-function Reflower() {
-  const reflow = useReflow()
-  useFrame(reflow)
-  return null
 }
 
 function Title() {
@@ -114,8 +102,6 @@ function Page({ onChangePages }: any) {
         onReflow={handleReflow}
         position={[-vpWidth / 2, vpHeight / 2, 0]}
       >
-        {/* <Reflower /> */}
-
         <Title />
 
         <group position-z={-0.3}>
@@ -276,24 +262,6 @@ function Page({ onChangePages }: any) {
   )
 }
 
-function Cube() {
-  const mesh = useRef<THREE.Mesh>(null!)
-  const quat = new THREE.Quaternion().setFromEuler(new THREE.Euler(1, 1, 0))
-  const quat2 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0))
-  const euler = new THREE.Euler(0, 0, 0)
-  useFrame(() => {
-    euler.set(state.top / 1000, state.top / 1000, 0)
-    quat.slerp(quat2.setFromEuler(euler), 0.1)
-    mesh.current.rotation.setFromQuaternion(quat)
-  })
-  return (
-    <mesh ref={mesh} position={[0, 0, -1.5]}>
-      <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color='#272730' />
-    </mesh>
-  )
-}
-
 export default function App() {
   const scrollArea = useRef(null!)
   // useEffect(() => void onScroll({ target: scrollArea.current }), [])
@@ -318,7 +286,6 @@ export default function App() {
 
         <Suspense fallback={<Html center>loading..</Html>}>
           <Page onChangePages={setPages} />
-          {/* <Cube /> */}
         </Suspense>
 
         <EffectComposer>
